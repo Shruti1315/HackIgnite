@@ -109,4 +109,102 @@ html,body{height:100%;margin:0;font-family:'Poppins',system-ui,-apple-system,Seg
   .countdown{font-size:12px}
   .btn-primary{padding:8px 10px;font-size:13px}
   .problems-table{min-width:540px}
+
+}
+
+/* ----------------------------
+   Mobile / small-screen fixes
+   Add this at the end of styles.css
+   ----------------------------*/
+
+/* general small devices */
+@media (max-width: 600px) {
+  /* Header: stack brand and controls */
+  .header-inner{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:10px;
+    padding:12px;
+  }
+  .brand{gap:10px}
+  .header-right{
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:8px;
+  }
+  .date-block{order:2}
+  .brand{order:1}
+  .brand-text .org{font-size:13px}
+  .brand-text .event{font-size:16px}
+
+  /* Make hero poster responsive */
+  .hero{margin:12px; border-radius:8px}
+  .poster{width:100%; height:auto; display:block; object-fit:cover; object-position:center center}
+
+  /* Sections: tighter padding */
+  .container{padding:12px}
+  .section{padding:16px 0}
+
+  /* Register & QR become single column (QR centered) */
+  .register-grid{grid-template-columns:1fr; gap:12px; align-items:start}
+  .qr-box{display:flex; justify-content:center; align-items:center; flex-direction:column}
+  .qr-box img{width:140px; height:140px; object-fit:cover; padding:6px}
+  .btn-primary, .btn-ghost { width:100%; box-sizing:border-box; display:inline-block; font-size:15px }
+
+  /* Timeline vertical */
+  .timeline{flex-direction:column; gap:12px}
+  .timeline-item{width:100%; min-width:unset; padding:12px}
+
+  /* Contacts grid stack */
+  .contact-grid{flex-direction:column; gap:12px}
+
+  /* Make poster overlay text smaller when present */
+  .hero-title{font-size:20px}
+
+  /* Table: convert to mobile "cards" for readability without changing HTML */
+  .table-wrap{padding:8px}
+  .problems-table{min-width:100% !important; width:100% !important}
+  .problems-table thead{display:none} /* hide header row on small screens */
+  .problems-table tbody tr{
+    display:block;
+    border:1px solid rgba(255,255,255,0.03);
+    margin-bottom:10px;
+    padding:10px;
+    border-radius:8px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));
+  }
+  .problems-table td{
+    display:block;
+    width:100%;
+    padding:6px 2px;
+    border-bottom:none;
+    text-align:left;
+  }
+  .problems-table td:first-child{opacity:0.9}
+  /* add labels for each cell via pseudo elements (no HTML changes needed) */
+  .problems-table td:nth-child(1)::before{content:"ID: "; font-weight:700; color:var(--muted); margin-right:6px}
+  .problems-table td:nth-child(2)::before{content:"Problem: "; font-weight:700; color:var(--muted); display:inline-block; margin-bottom:6px}
+  .problems-table td:nth-child(3)::before{content:"Category: "; font-weight:700; color:var(--muted); margin-right:6px}
+  .problems-table td:nth-child(4)::before{content:"Points: "; font-weight:700; color:var(--muted); margin-right:6px}
+  /* ensure editable cells still look like text */
+  .problems-table td[contenteditable]{cursor:text}
+
+  /* Table actions wrap */
+  .table-actions{flex-direction:column; align-items:stretch; gap:8px}
+  .table-actions button{width:100%; text-align:center}
+
+  /* make footer padding smaller */
+  .site-footer{padding:12px}
+}
+
+/* extra tiny phones — tighten further */
+@media (max-width: 380px){
+  .brand img{width:40px;height:40px}
+  .qr-box img{width:120px;height:120px}
+  .poster{border-radius:6px}
+  .countdown{font-size:11px;padding:6px}
+  .brand-text .event{font-size:14px}
+  .lead{font-size:14px}
 }

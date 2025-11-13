@@ -1,0 +1,112 @@
+/* styles.css
+   Color palette (as provided):
+   Electric Blue  : #00A8FF  (rgb(0,168,255))
+   Fiery Orange   : #FF5E00  (rgb(255,94,0))
+   Deep Violet    : #662D91  (rgb(102,45,145))
+   Metallic Silver: #D0D0D0  (rgb(208,208,208))
+   Jet Black      : #000000  (rgb(0,0,0))
+*/
+
+/* ---------------------------
+   Base / layout
+   --------------------------- */
+:root{
+  --electric-blue: #00A8FF;
+  --fiery-orange:  #FF5E00;
+  --deep-violet:   #662D91;
+  --silver:        #D0D0D0;
+  --black:         #000000;
+
+  --bg: linear-gradient(180deg,#03020a 0%, #071028 60%);
+  --card-bg: rgba(255,255,255,0.02);
+  --muted: rgba(208,208,208,0.8);
+  --max-width: 1100px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;background:var(--bg);color:var(--silver);-webkit-font-smoothing:antialiased}
+.container{max-width:var(--max-width);margin:0 auto;padding:18px}
+
+/* Header */
+.site-header{position:sticky;top:0;z-index:40;background:rgba(2,6,15,0.55);backdrop-filter: blur(6px);border-bottom:1px solid rgba(255,255,255,0.03)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{width:56px;height:56px;object-fit:contain;border-radius:8px;background:#fff;padding:6px}
+.brand-text .org{font-weight:600;color:var(--silver);font-size:14px}
+.brand-text .event{font-weight:800;font-size:20px}
+.accent-orange{color:var(--fiery-orange)}
+.muted{color:var(--muted)}
+.small{font-size:13px}
+.tiny{font-size:12px}
+
+/* header right */
+.header-right{display:flex;align-items:center;gap:12px}
+.date-block{text-align:right}
+.date-label{font-size:12px;color:var(--muted)}
+.countdown{font-weight:700;font-size:14px;color:var(--electric-blue);background:rgba(0,168,255,0.06);padding:6px 8px;border-radius:8px}
+.btn-primary{display:inline-block;background:linear-gradient(90deg,var(--electric-blue),#7fd8ff);color:#021; padding:10px 14px;border-radius:999px;font-weight:700;text-decoration:none;box-shadow:0 10px 30px rgba(0,168,255,0.06)}
+.btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--silver);padding:8px 12px;border-radius:8px;cursor:pointer}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;border-radius:10px;margin:18px auto;max-width:var(--max-width);height:auto}
+.poster{width:100%;height:auto;display:block;filter:contrast(0.9) saturate(1.05);opacity:0.98}
+/* overlay text */
+.hero-overlay{position:absolute;left:24px;bottom:24px;color:var(--silver);text-shadow:0 10px 30px rgba(0,0,0,0.6)}
+.hero-title{font-size:40px;margin:0;letter-spacing:1px}
+.hero-sub{margin:6px 0 0 0;color:var(--muted)}
+
+/* Section */
+.section{padding:22px 0;border-bottom:1px dashed rgba(255,255,255,0.02);margin-bottom:6px}
+.section-title{font-size:20px;margin:0 0 8px 0;color:var(--electric-blue)}
+.lead{color:var(--silver);font-size:15px;line-height:1.5}
+
+/* Problems table */
+.table-wrap{overflow:auto;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));border-radius:8px;padding:12px}
+.problems-table{width:100%;border-collapse:collapse;min-width:900px}
+.problems-table th, .problems-table td{padding:10px;border-bottom:1px solid rgba(255,255,255,0.03);text-align:left}
+.problems-table thead th{background:rgba(0,0,0,0.5);font-weight:700;color:var(--silver);position:sticky;top:0;backdrop-filter:blur(6px)}
+.problems-table tbody tr:hover td{background:linear-gradient(90deg, rgba(0,168,255,0.02), rgba(255,94,0,0.02))}
+.problems-table td[contenteditable]{outline:none;cursor:text}
+
+/* table actions */
+.table-actions{display:flex;gap:12px;align-items:center;margin-top:10px}
+
+/* Rules */
+.rules-list{margin:0;padding-left:20px;line-height:1.6;color:var(--silver)}
+
+/* Timeline */
+.timeline{display:flex;gap:18px;flex-wrap:wrap;margin-top:12px}
+.timeline-item{display:flex;gap:12px;align-items:flex-start;background:var(--card-bg);padding:12px;border-radius:10px;min-width:260px;flex:1}
+.timeline-dot{width:12px;height:12px;border-radius:50%;background:var(--electric-blue);box-shadow:0 6px 18px rgba(0,168,255,0.12)}
+.timeline-title{font-weight:700;color:var(--silver)}
+.timeline-date{font-size:13px;color:var(--muted)}
+
+/* Registration grid */
+.register-grid{display:grid;grid-template-columns:150px 1fr;gap:18px;align-items:center}
+.qr-box img{width:140px;height:140px;object-fit:cover;border-radius:8px;background:#fff;padding:8px}
+.qr-box p{margin:6px 0 0 0;color:var(--muted)}
+
+/* Contacts */
+.contact-grid{display:flex;gap:24px;flex-wrap:wrap}
+
+/* Footer */
+.site-footer{padding:18px 0;color:var(--muted);border-top:1px solid rgba(255,255,255,0.02);margin-top:18px}
+
+/* Hidden utility */
+.hidden{display:none !important}
+
+/* Responsiveness */
+@media (max-width:900px){
+  .brand-text .event{font-size:16px}
+  .hero-title{font-size:28px}
+  .register-grid{grid-template-columns:1fr}
+  .header-inner{padding:8px}
+  .poster{height:auto}
+  .problems-table{min-width:680px}
+}
+@media (max-width:480px){
+  .brand img{width:44px;height:44px}
+  .countdown{font-size:12px}
+  .btn-primary{padding:8px 10px;font-size:13px}
+  .problems-table{min-width:540px}
+}

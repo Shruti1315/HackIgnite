@@ -73,6 +73,24 @@ html,body{height:100%;margin:0;font-family:'Poppins',system-ui,-apple-system,Seg
 
 /* Rules */
 .rules-list{margin:0;padding-left:20px;line-height:1.6;color:var(--silver)}
+/* Add to styles.css */
+.rules-list .accent-orange {
+  color: var(--fiery-orange);
+  font-weight: 700;        /* optional: thoda bold dikhane ke liye */
+  /* text-shadow: 0 1px 0 rgba(255,94,0,0.06); optional */
+}
+
+/* Agar aap chahte ho ke sub-list items bhi isi color inherit karein */
+.rules-list .accent-orange + ul,
+.rules-list .accent-orange + ul li {
+  color: var(--silver); /* keep subitems silver (default) */
+}
+
+/* Agar heading text strong tag me hai to bhi style karna ho: */
+.rules-list strong, .rules-list .accent-orange {
+  color: var(--fiery-orange);
+}
+
 
 /* Timeline */
 .timeline{display:flex;gap:18px;flex-wrap:wrap;margin-top:12px}
@@ -208,3 +226,4 @@ html,body{height:100%;margin:0;font-family:'Poppins',system-ui,-apple-system,Seg
   .brand-text .event{font-size:14px}
   .lead{font-size:14px}
 }
+

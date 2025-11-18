@@ -231,54 +231,8 @@ html,body{height:100%;margin:0;font-family:'Poppins',system-ui,-apple-system,Seg
 }
 
 
-/* ===============================
-   CENTER ALIGN PROBLEMS TABLE
-   =============================== */
 
-/* Center full table inside container */
-.table-wrap {
-  display: flex;
-  justify-content: center;
-}
 
-/* Fix table width and center positioning */
-.problems-table {
-  margin: 0 auto;
-  table-layout: fixed; /* important for clean centering */
-}
-
-/* All header + data cells centered */
-.problems-table th,
-.problems-table td {
-  text-align: center !important;
-  vertical-align: middle !important;
-}
-
-/* Problem Statement column wrap properly */
-.problems-table td:nth-child(2) {
-  word-wrap: break-word;
-  white-space: normal;
-  line-height: 1.45;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-/* If you want PERFECT multi-line centering inside cells */
-.problems-table td,
-.problems-table th {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Prevent weird spacing in mobile card-view */
-@media (max-width: 600px) {
-  .problems-table td,
-  .problems-table th {
-    display: block !important;
-    text-align: left !important;
-  }
-}
 
 
 

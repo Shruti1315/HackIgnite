@@ -71,71 +71,7 @@ html,body{height:100%;margin:0;font-family:'Poppins',system-ui,-apple-system,Seg
 /* table actions */
 .table-actions{display:flex;gap:12px;align-items:center;margin-top:10px}
 
-/* ========== Center table content (horizontal + vertical) ========== */
 
-/* Ensure table is centered inside its container */
-#problemsTable {
-  margin: 0 auto;               /* center table horizontally */
-  width: 95%;                   /* adjust as needed */
-  table-layout: fixed;          /* stable columns & proper wrapping */
-  border-collapse: collapse;
-  background: transparent;      /* keep your theme */
-}
-
-/* Control column widths (will work with table-layout: fixed) */
-#problemsTable td,
-#problemsTable th {
-  padding: 22px 20px;           /* breathing room */
-  text-align: center;           /* horizontal centering */
-  vertical-align: middle;       /* vertical centering */
-  word-break: break-word;       /* wrap long statements */
-  white-space: normal;          /* allow wrapping */
-}
-
-/* If some cells contain multiple inline elements, center them using flex */
-#problemsTable td .cell-inner,
-#problemsTable th .cell-inner {
-  display: flex;
-  flex-direction: column;       /* stack lines vertically (keeps multi-line centered) */
-  align-items: center;          /* horizontal center */
-  justify-content: center;      /* vertical center inside cell */
-  gap: 6px;                     /* small gap between stacked items */
-}
-
-/* Header styling: keep headings centered */
-#problemsTable thead th {
-  text-align: center;
-}
-
-/* Improve readability for very long problem statements */
-#problemsTable td:nth-child(2) { /* Problem Statement column */
-  padding-left: 30px;
-  padding-right: 30px;
-}
-
-/* subtle divider / row height control if needed */
-#problemsTable tbody tr {
-  min-height: 72px;
-}
-
-/* Responsive: on narrow screens, left-align statements for better readability */
-@media (max-width: 860px) {
-  #problemsTable,
-  #problemsTable td,
-  #problemsTable th {
-    width: 100%;
-  }
-  /* Keep IDs and Theme centered but statements left-aligned for readability */
-  #problemsTable td:nth-child(2),
-  #problemsTable thead th:nth-child(2) {
-    text-align: left;
-  }
-  /* reduce padding to fit small screens */
-  #problemsTable td,
-  #problemsTable th {
-    padding: 12px 10px;
-  }
-}
 
 
 /* Rules */
@@ -293,6 +229,58 @@ html,body{height:100%;margin:0;font-family:'Poppins',system-ui,-apple-system,Seg
   .brand-text .event{font-size:14px}
   .lead{font-size:14px}
 }
+
+
+/* ===============================
+   CENTER ALIGN PROBLEMS TABLE
+   =============================== */
+
+/* Center full table inside container */
+.table-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+/* Fix table width and center positioning */
+.problems-table {
+  margin: 0 auto;
+  table-layout: fixed; /* important for clean centering */
+}
+
+/* All header + data cells centered */
+.problems-table th,
+.problems-table td {
+  text-align: center !important;
+  vertical-align: middle !important;
+}
+
+/* Problem Statement column wrap properly */
+.problems-table td:nth-child(2) {
+  word-wrap: break-word;
+  white-space: normal;
+  line-height: 1.45;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* If you want PERFECT multi-line centering inside cells */
+.problems-table td,
+.problems-table th {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Prevent weird spacing in mobile card-view */
+@media (max-width: 600px) {
+  .problems-table td,
+  .problems-table th {
+    display: block !important;
+    text-align: left !important;
+  }
+}
+
+
 
 
 

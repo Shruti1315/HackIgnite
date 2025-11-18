@@ -17,7 +17,7 @@
     "2025-12-04T23:59:00+05:30"
   - If you leave it null, countdown will show a message to set the date.
 */
-const DEADLINE_ISO = "2025-12-04T23:59:00+05:30"; // <-- EDIT THIS
+const DEADLINE_ISO = "2025-11-24T23:59:00+05:30"; // <-- EDIT THIS
 
 /*
   REGISTRATION_URL:
@@ -176,3 +176,4 @@ document.querySelectorAll('.section').forEach(s => observer.observe(s));
 document.getElementById('registerBtn').addEventListener('keydown', (e) => {
   if (e.key === 'Enter') registerBtn.click();
 });
+
